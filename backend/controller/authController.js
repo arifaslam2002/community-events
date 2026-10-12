@@ -26,7 +26,6 @@ export const register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      // Public registration should assign the default student role.
     });
 
     return res.status(201).json({
@@ -87,7 +86,6 @@ export const login = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        role: user.role,
       },
     });
   } catch (error) {
